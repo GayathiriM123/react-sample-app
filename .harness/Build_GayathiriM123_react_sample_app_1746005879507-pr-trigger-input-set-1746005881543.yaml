@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_GayathiriM123_react_sample_app_1746005879507-pr-trigger-input-set
+  identifier: Build_GayathiriM123_react_sample_app_1746005879507prtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: default_project
+  pipeline:
+    identifier: Build_GayathiriM123_react_sample_app_1746005879507
+    properties:
+      ci:
+        codebase:
+          build:
+            type: PR
+            spec:
+              number: <+trigger.prNumber>
