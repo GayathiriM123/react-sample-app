@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_GayathiriM123_react_sample_app_1746005879507-push-trigger-input-set
+  identifier: Build_GayathiriM123_react_sample_app_1746005879507pushtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: default_project
+  pipeline:
+    identifier: Build_GayathiriM123_react_sample_app_1746005879507
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>
