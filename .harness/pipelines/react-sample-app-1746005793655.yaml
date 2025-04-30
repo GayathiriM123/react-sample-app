@@ -6,9 +6,10 @@ pipeline:
   properties:
     ci:
       codebase:
-        build: <+input>
         connectorRef: account.Github_OAuth_1746005731089
         repoName: GayathiriM123/react-sample-app
+        build: <+input>
+        sparseCheckout: []
   stages:
     - stage:
         identifier: build1
@@ -27,13 +28,6 @@ pipeline:
                   timeout: ""
                   type: Run
               - step:
-                  identifier: test
-                  name: test
-                  spec:
-                    command: npm run test
-                  timeout: ""
-                  type: Run
-              - step:
                   identifier: build
                   name: build
                   spec:
@@ -44,17 +38,17 @@ pipeline:
                   identifier: dockerbuild
                   name: docker_build
                   spec:
-                    caching: true
                     connectorRef: <+input>
-                    repo: hello/world
+                    repo: harness-test
                     tags:
                       - latest
+                    caching: true
                   timeout: ""
                   type: BuildAndPushDockerRegistry
           platform:
+            os: Windows
             arch: Amd64
-            os: Linux
           runtime:
-            spec: {}
             type: Docker
+            spec: {}
         type: CI
